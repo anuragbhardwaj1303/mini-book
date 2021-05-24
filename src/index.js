@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
-const img =
-  "https://images-eu.ssl-images-amazon.com/images/I/71JZ0neAP1L._AC_UL200_SR200,200_.jpg";
-const title = "The Blue Umbrella";
-const author = "Ruskin Bond";
 
 function BookList() {
   return (
@@ -25,7 +21,7 @@ function BookList() {
         author='Napolean Hill'
       />
       <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/71JZ0neAP1L._AC_UL200_SR200,200_.jpg'
+        img='https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL200_SR200,200_.jpg'
         title='As a Man Thinketh'
         author='James Allen'
       />
@@ -42,14 +38,14 @@ function BookList() {
     </section>
   );
 }
-const Book = (props) => {
+const Book = ({ img, title, author }) => {
   return (
     <article className='book'>
-      <img src={props.img} alt='' className='bookimg'></img>
+      <img src={img} alt='' className='bookimg'></img>
 
-      <h3 className='title'>{props.title}</h3>
+      <h3 className='title'>{title}</h3>
 
-      <p>{props.author}</p>
+      <p>{author}</p>
     </article>
   );
 };

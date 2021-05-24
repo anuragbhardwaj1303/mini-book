@@ -41,6 +41,7 @@ code {
 }
 .book h3 {
   margin-top: 0.5rem;
+  font-size: 1rem;
 }
 .title:hover {
   color: crimson;
