@@ -1,53 +1,27 @@
 import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
+import { books } from "./books";
+import Book from "./Book";
 
 function BookList() {
   return (
-    <section className='booklist'>
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/71JZ0neAP1L._AC_UL200_SR200,200_.jpg'
-        title='The Blue Umbrella'
-        author='Ruskin Bond'
-      />
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/711hfHGE%2BcL._AC_UL200_SR200,200_.jpg'
-        title='Great Stories for Children'
-        author='Ruskin Bond'
-      />
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/71AdHA%2BqqwL._AC_UL200_SR200,200_.jpg'
-        title='Think and Grow Rich'
-        author='Napolean Hill'
-      />
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL200_SR200,200_.jpg'
-        title='As a Man Thinketh'
-        author='James Allen'
-      />
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/713jIoMO3UL._AC_UL200_SR200,200_.jpg'
-        title='Sapiens A Brief History of Humankind'
-        author='Yuval Noah Harari'
-      />
-      <Book
-        img='https://images-eu.ssl-images-amazon.com/images/I/819HSIKiWdS._AC_UL200_SR200,200_.jpg'
-        title='Pride & Prejudice'
-        author='Jane Austen'
-      />
-    </section>
-  );
-}
-const Book = ({ img, title, author }) => {
-  return (
-    <article className='book'>
-      <img src={img} alt='' className='bookimg'></img>
-
-      <h3 className='title'>{title}</h3>
-
-      <p>{author}</p>
+    <article>
+      <h1
+        style={{
+          marginTop: "35px",
+          textAlign: "center",
+          color: "#130f40",
+        }}>
+        Best Sellers
+      </h1>
+      <section className='booklist'>
+        {books.map((book) => {
+          return <Book key={book.id} book={book}></Book>;
+        })}
+      </section>
     </article>
   );
-};
+}
 
 ReactDom.render(<BookList />, document.getElementById("root"));
